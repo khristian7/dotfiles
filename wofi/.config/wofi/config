@@ -1,0 +1,40 @@
+# Wofi Configuration - Spotlight Style
+
+# Window dimensions and positioning
+width=650
+height=400
+location=center
+orientation=vertical
+halign=fill
+line_wrap=off
+
+# Appearance
+show=drun,run
+prompt=Search...
+filter_rate=100
+allow_markup=true
+no_actions=true
+show_all=false
+print_command=true
+layer=overlay
+insensitive=true
+
+# Performance and behavior
+cache_file=/dev/null
+matching=fuzzy
+key_expand=Tab
+image_size=32
+display_generic=false
+location=center
+width=650
+height=400
+
+# Sorting and search
+sort_order=alphabetical
+gtk_dark=true
+parse_search=true
+
+
+# Animation and effects
+hide_scroll=true
+dynamic_lines=true

@@ -1,0 +1,115 @@
+/* Wofi Spotlight Theme - Refined */
+
+* {
+    font-family: "SF Pro Display", "Inter", "Roboto", sans-serif;
+}
+
+window {
+    margin: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    background: rgba(40, 40, 40, 0.8);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    animation: spotlight-appear 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes spotlight-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+#input {
+    margin: 20px;
+    border: none;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 20px;
+    font-weight: 300;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+#input:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 
+        inset 0 1px 2px rgba(0, 0, 0, 0.2),
+        0 0 0 2px rgba(138, 180, 248, 0.4);
+    outline: none;
+}
+
+#inner-box {
+    margin: 0;
+    padding: 10px;
+    background: transparent;
+}
+
+/* This creates the separator line, a key Spotlight feature */
+#scroll {
+    margin-top: 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+}
+
+#outer-box {
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+#text {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+#entry {
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 0 10px;
+    background: transparent;
+    transition: background-color 0.15s ease-out;
+}
+
+#entry:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* More subtle, authentic selection style */
+#entry:selected {
+    background: rgba(138, 180, 248, 0.3);
+}
+
+#entry:selected #text {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+#entry image {
+    margin-right: 15px;
+}
+
+/* Sub-text for comments or executable paths */
+#text:nth-child(2) {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Let's keep your beautiful typing glow! */
+@keyframes typing-glow {
+    0%, 100% { box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(138, 180, 248, 0.0); }
+    50% { box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 3px rgba(138, 180, 248, 0.25); }
+}
+
+#input:not(:placeholder-shown) {
+    animation: typing-glow 1.5s ease-in-out infinite;
+}
